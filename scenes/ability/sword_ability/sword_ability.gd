@@ -1,6 +1,9 @@
 extends Node2D
+# TODO make sword extend character body 2d to allow move and slide!
 
 var target_enemy: Node2D = null
+var max_speed = 75
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,3 +19,9 @@ func _process(delta: float) -> void:
 
 func set_target_enemy(enemy: Node2D):
 	target_enemy = enemy
+
+# will use with velocity later
+func getDirectionToEnemy():
+	if target_enemy == null:
+		return Vector2.ZERO
+	return (target_enemy.global_position - global_position).normalized()

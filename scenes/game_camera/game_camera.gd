@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	acquire_target()
-	global_position = global_position.lerp(target_position, 1.0 - exp(-delta * 10)) # linear interpolation with framerate independent smoothing 
+	global_position = global_position.lerp(target_position, 1.0 - exp(-delta * 25)) # linear interpolation with framerate independent smoothing 
 	
 
 func acquire_target():
