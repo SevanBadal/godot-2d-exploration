@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpeeecekjoysk"]
+
+[sub_resource type="GDScript" id="GDScript_5gqsy"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+
+"
+
+[node name="ExperienceUI" type="CanvasLayer"]
+script = SubResource("GDScript_5gqsy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Count: 0"
