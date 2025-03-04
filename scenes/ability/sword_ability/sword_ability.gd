@@ -1,5 +1,10 @@
 extends Node2D
+class_name SwordAbility
+
+@onready var hitbox_component: HitboxComponent = $HitboxComponent
+
 # TODO make sword extend character body 2d to allow move and slide!
+# THIS IS A CUSTOM SCRIPT 
 
 var target_enemy: Node2D = null
 var max_speed = 75

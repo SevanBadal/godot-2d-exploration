@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cme7cnmpsgapi"]
+
+[ext_resource type="Script" uid="uid://ybfu8t8nmkjd" path="res://scenes/component/vile_drop_component.gd" id="1_28gpp"]
+[ext_resource type="PackedScene" uid="uid://cto8vlafv4qwv" path="res://scenes/game_object/experience_vile/experience_vile.tscn" id="2_v3wgx"]
+
+[node name="VileDropComponent" type="Node"]
+script = ExtResource("1_28gpp")
+vial_scene = ExtResource("2_v3wgx")

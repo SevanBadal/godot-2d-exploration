@@ -3,7 +3,7 @@ extends Node
 const MAX_RANGE = 150
 # Which scene to spawn at runtime
 @export var sword_ability: PackedScene
-
+var damage = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,8 +33,9 @@ func on_timer_timeout():
 	
 	# Now check if closest enemy is within range
 	if closest_enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2):
-		var sword_instance = sword_ability.instantiate() as Node2D
+		var sword_instance = sword_ability.instantiate() as SwordAbility
 		closest_enemy.get_parent().add_child(sword_instance)
+		sword_instance.hitbox_component.damage = damage
 		sword_instance.global_position = closest_enemy.global_position
 		# set random direction, not really doing anything since I'm tracking direction of the enemy in sword ability. Good for following effect and direction effect
 		sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0,TAU))
